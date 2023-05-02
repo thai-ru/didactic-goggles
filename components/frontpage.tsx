@@ -1,9 +1,10 @@
-import React from 'react';
-import Frontpage from '../components/frontpage';
-
+import React, { Children } from 'react';
 import Head from 'next/head';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Inter } from 'next/font/google'
+import { Carousel } from 'antd';
 
+const inter = Inter({ subsets: ['latin'] })
 
 const contentStyle: React.CSSProperties = {
   height: '460px',
@@ -24,9 +25,28 @@ export default function Home() {
       </Head>
       
       <main className=" ">
-        <Frontpage/>
+
+          <Carousel autoplay>
+            <div>
+              <h3 style={contentStyle}>1</h3>
+            </div>
+            <div>
+              <h3 style={contentStyle}>2</h3>
+            </div>
+            <div>
+              <h3 style={contentStyle}>3</h3>
+            </div>
+            <div>
+              <h3 style={contentStyle}>4</h3>
+            </div>
+          </Carousel>
+
+          <div>
+
+          </div>
 
       </main>
+      
     </>
   )
 }
